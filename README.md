@@ -1,2 +1,2 @@
 # eden-object-conversion-tool
-不同对象属性转换
+不同对象之间属性值映射
