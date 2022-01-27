@@ -1,4 +1,4 @@
-package com.eden.domain;
+package com.eden.test.domain;
 
 import com.eden.annotation.TransferLabel;
 

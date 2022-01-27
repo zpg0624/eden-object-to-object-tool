@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/transferProperties.iml" filepath="$PROJECT_DIR$/transferProperties.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eden-object-conversion-tool.iml" filepath="$PROJECT_DIR$/eden-object-conversion-tool.iml" />
     </modules>
   </component>
 </project>

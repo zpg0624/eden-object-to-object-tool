@@ -1,4 +1,4 @@
-package com.eden.domain;
+package com.eden.conversion.dto;
 
 /**
  * @created by eden

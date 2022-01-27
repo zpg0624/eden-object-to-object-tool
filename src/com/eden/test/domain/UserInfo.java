@@ -1,24 +1,19 @@
-package com.eden.domain;
+package com.eden.test.domain;
 
 import com.eden.annotation.TransferLabel;
-import jdk.nashorn.internal.objects.annotations.Getter;
 
 /**
  * @created by eden
  * @since 2019-06-23 14:40:52
  */
-
-
-public class TargetUserInfo {
+public class UserInfo {
 
     @TransferLabel("岗位类型")
     private String postType;
 
 
-
     @TransferLabel("年龄")
     private Integer age;
-
 
 
     @TransferLabel(isObject = true)
@@ -52,7 +47,7 @@ public class TargetUserInfo {
 
     @Override
     public String toString() {
-        return "TargetUserInfo{" +
+        return "UserInfo{" +
                 "postType='" + postType + '\'' +
                 ", age=" + age +
                 ", eduInfo=" + eduInfo +
