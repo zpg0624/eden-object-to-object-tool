@@ -1,7 +1,7 @@
 package com.eden.test;
 
 import com.eden.conversion.dto.CustomFields;
-import com.eden.conversion.helper.ConversionSimpleObjectHandler;
+import com.eden.conversion.handler.ConversionSimpleObjectHandler;
 import com.eden.test.domain.AddressA;
 import com.eden.test.domain.PersonA;
 import com.eden.test.domain.PersonB;

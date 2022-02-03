@@ -1,24 +1,37 @@
-package com.eden.conversion.helper;
-
+package com.eden.conversion.handler;
 
 import com.eden.annotation.TransferLabel;
 import com.eden.conversion.dto.CustomFields;
 
 import java.lang.reflect.Field;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/**
- * 转换模板，子类可以重写该方法
- * @created by eden
- * @since 2019-06-23 14:38:48
- */
-public interface ConversionObjectTemplate {
+public class ConversionSimpleObjectHandler implements ConversionObjectTemplate {
 
-
-    void sourceToTargetObject(Object source, Object target);
+    @Override
+    public void sourceToTargetObject(Object source, Object target) {
+        final Map<String, FieldAndClassCompose> sourceFieldMap = getSourceFieldMap(source);
+        final Map<String, FieldAndClassCompose> targetFieldMap = getTargetFieldMap(target);
+        sourceFieldMap.entrySet().stream()
+                .forEach(sourceX -> {
+                    final FieldAndClassCompose sourceFieldAndClassCompose = sourceX.getValue();
+                    final FieldAndClassCompose targetFieldAndClassCompose = targetFieldMap.get(sourceX.getKey());
+                    if (Objects.nonNull(targetFieldAndClassCompose)) {
+                        try {
+                            final Field sourceField = sourceFieldAndClassCompose.getField();
+                            sourceField.setAccessible(true);
+                            final Object fieldVal = sourceField.get(sourceFieldAndClassCompose.getObject());
+                            final Field targetField = targetFieldAndClassCompose.getField();
+                            targetField.setAccessible(true);
+                            targetField.set(targetFieldAndClassCompose.getObject(), fieldVal);
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+    }
 
     /**
      * <p>
@@ -29,7 +42,8 @@ public interface ConversionObjectTemplate {
      * @param target
      * @param data
      */
-    default void customFieldsToTargetObject(Object target, CustomFields data) {
+    @Override
+    public void customFieldsToTargetObject(Object target, CustomFields data) {
         Field[] fields = target.getClass().getDeclaredFields();
         Arrays.stream(fields).forEach(field -> {
             TransferLabel label = field.getAnnotation(TransferLabel.class);
@@ -52,19 +66,8 @@ public interface ConversionObjectTemplate {
         });
     }
 
-    default Map<String, FieldAndClassCompose> getSourceFieldMap(Object source) {
-        Map<String, FieldAndClassCompose> sourceFieldMap = new HashMap<>();
-        determineFieldMapClazz(source, sourceFieldMap);
-        return sourceFieldMap;
-    }
-
-    default Map<String, FieldAndClassCompose> getTargetFieldMap(Object target) {
-        Map<String, FieldAndClassCompose> targetFieldMap = new HashMap<>();
-        determineFieldMapClazz(target, targetFieldMap);
-        return targetFieldMap;
-    }
-
-    default void determineFieldMapClazz(Object clazzVal, Map<String, FieldAndClassCompose> fieldAndClassComposeMap) {
+    @Override
+    public void determineFieldMapClazz(Object clazzVal, Map<String, FieldAndClassCompose> fieldAndClassComposeMap) {
         Arrays.stream(clazzVal.getClass().getDeclaredFields())
                 .filter(x -> Objects.nonNull(x.getAnnotation(TransferLabel.class)))
                 .forEach(x -> {
@@ -92,51 +95,4 @@ public interface ConversionObjectTemplate {
                 });
     }
 
-
-  class FieldAndClassCompose {
-        private Field field;
-        private Class<?> clazz;
-        private Object object;
-
-        public Field getField() {
-            return field;
-        }
-
-        public void setField(Field field) {
-            this.field = field;
-        }
-
-        public Class<?> getClazz() {
-            return clazz;
-        }
-
-        public void setClazz(Class<?> clazz) {
-            this.clazz = clazz;
-        }
-
-        public Object getObject() {
-            return object;
-        }
-
-        public void setObject(Object object) {
-            this.object = object;
-        }
-
-        public static FieldAndClassCompose of(Field field, Object object) {
-            final FieldAndClassCompose fieldAndClassCompose = new FieldAndClassCompose();
-            fieldAndClassCompose.setField(field);
-            fieldAndClassCompose.setClazz(object.getClass());
-            fieldAndClassCompose.setObject(object);
-            return fieldAndClassCompose;
-        }
-
-        @Override
-        public String toString() {
-            return "FieldAndClassCompose{" +
-                    "field=" + field.getName() +
-                    ", clazz=" + clazz +
-                    ", object=" + object +
-                    '}';
-        }
-    }
 }
