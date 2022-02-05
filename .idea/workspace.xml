@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca722a81-7507-47ff-b1bd-a33597b8304f" name="Changes" comment="" />
+    <list default="true" id="ca722a81-7507-47ff-b1bd-a33597b8304f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +51,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.eden.domain" />
       <recent name="com.eden.test" />
@@ -57,7 +62,7 @@
   <component name="RunManager" selected="Application.Test (1)">
     <configuration name="ClientObj" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.eden.domain.ClientObj" />
-      <module name="eden-object-conversion-tool" />
+      <module name="eden-object-to-object-tool" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="main.java.eden.conversion.dto.*" />
@@ -70,7 +75,7 @@
     </configuration>
     <configuration name="ConversionHelper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.eden.conversion.helper.ConversionHelper" />
-      <module name="eden-object-conversion-tool" />
+      <module name="eden-object-to-object-tool" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="main.java.eden.conversion.handler.*" />
@@ -83,20 +88,33 @@
     </configuration>
     <configuration name="Test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Test" />
-      <module name="eden-object-conversion-tool" />
+      <module name="eden-object-to-object-tool" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.java.eden.test.Test" />
-      <module name="eden-object-conversion-tool" />
+      <module name="eden-object-to-object-tool" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="main.java.eden.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="eden-object-to-object-tool" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="eden-object-to-object-tool" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -127,7 +145,21 @@
       <option name="project" value="LOCAL" />
       <updated>1644032078542</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="【UPDATE】整理代码">
+      <created>1644032143426</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1644032143426</updated>
+    </task>
+    <task id="LOCAL-00003" summary="【UPDATE】整理代码">
+      <created>1644032152082</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1644032152082</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
