@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca722a81-7507-47ff-b1bd-a33597b8304f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eden-object-conversion-tool.iml" beforeDir="false" afterPath="$PROJECT_DIR$/eden-object-conversion-tool.iml" afterDir="false" />
-    </list>
+    <list default="true" id="ca722a81-7507-47ff-b1bd-a33597b8304f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -123,10 +120,24 @@
       <updated>1643245948802</updated>
       <workItem from="1643245950514" duration="10765000" />
     </task>
+    <task id="LOCAL-00001" summary="【UPDATE】整理代码">
+      <created>1644032078542</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1644032078542</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="【UPDATE】整理代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="【UPDATE】整理代码" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
